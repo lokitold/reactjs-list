@@ -9,20 +9,23 @@ class EmpleadoApp extends React.Component {
   }
 
   componentWillMount() {
-    fetch('http://taller-angular.carlosazaustre.es/empleados')
+
+		//this.setState({ empleados: empleados });
+
+    /*fetch('http://taller-angular.carlosazaustre.es/empleados')
       .then((response) => {
         return response.json()
       })
       .then((empleados) => {
         this.setState({ empleados: empleados })
-      })
+      })*/
   }
 
   render() {
-    if (this.state.empleados.length > 0) {
+    if (this.props.listado.length > 0) {
       return (
         <div className="container-fluid">
-          <EmpleadoList listado={this.state.empleados} />
+          <EmpleadoList listado={this.props.listado} />
         </div>
       )
     } else {
